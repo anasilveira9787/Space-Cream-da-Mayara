@@ -236,7 +236,7 @@ main{
 
   @media (min-width:1200px) {
     .container{
-      min-width: 120rem;
+      max-width: 120rem;
       display: flex;
       height: 72rem;  
     }
@@ -286,7 +286,7 @@ main{
 
     .cards{
       display: grid;
-      gap:1rem;
+      gap:2rem;
       grid-template-areas:  "A B C"
       "D B F"
       "D E F";
@@ -334,7 +334,7 @@ main{
   }
   @media (min-width:1400px){
     .container{
-      max-width: 200rem;
+      max-width: 160rem;
       height: 100rem;
     }
 
@@ -372,5 +372,3 @@ main{
       top: 89rem;
     }
   }
-
- 
