@@ -88,6 +88,7 @@ main{
   color: var(--text-color);
   text-align: center;
   margin: 8rem auto 6rem;
+  width: 31rem;
 }
 
 .card{
@@ -170,6 +171,11 @@ main{
   .logo{
     width: 20%;
     margin: 3rem auto;
+  }
+
+  .text{
+    margin: 48rem;
+    margin: auto;
   }
 
   .text p{
