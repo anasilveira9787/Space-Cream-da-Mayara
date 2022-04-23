@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Staatliches', cursive;
+  text-decoration: none;
 }
 
 /*<------------ variables ------------------->*/
@@ -60,7 +61,7 @@ body::before{
   line-height: 3.4rem;
   color:white;
   letter-spacing: 0.05em;
-  font-family: "Staatliches", sans-serif;
+  font-family: "Staatliches", cursive;
 }
 
 .titleHeader{
@@ -80,14 +81,13 @@ main{
   padding: 0 3.2rem 6rem;
 }
 
-main p{
+.text p{
   font-family: "Palanquin", sans-serif;
-  font-weight: 400;
   font-size: 2rem;
   line-height: 2rem;
   color: var(--text-color);
   text-align: center;
-  margin: 1.4rem auto 6rem;
+  margin: 8rem auto 6rem;
 }
 
 .card{
@@ -122,6 +122,10 @@ main p{
   animation: titleDown 700ms 350ms backwards;
 }
 
+.footer{
+  display: none;
+}
+
 /*<--------------- @ rules (animação) --------------->*/
 @keyframes imagesUp {
   0%{
@@ -148,3 +152,219 @@ main p{
   }
 }
 
+/*<-------------- responsividade ------------------->*/
+@media (min-width:700px){
+  .container{
+    max-width: 117rem;
+  }
+
+  body{
+    background-color: white;
+  }
+
+  .header{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .logo{
+    width: 20%;
+    margin: 3rem auto;
+  }
+
+  .text p{
+    font-size: 2.5rem;
+    line-height: 3rem;
+    width: 45rem;
+    margin: 8rem auto 2rem;
+ }
+
+  .cards{
+    display: grid;
+    gap:2rem;
+    grid-template-areas: "A B C"
+    "D B F"
+    "D E F";
+  }
+
+  .cards div:nth-child(1){
+    grid-area: A;
+  }
+
+  .cards div:nth-child(2){
+    grid-area: B;
+  }
+
+  .cards div:nth-child(3){
+    grid-area: C;
+  }
+
+  .cards div:nth-child(4){
+    grid-area: D;
+  }
+  .cards div:nth-child(5){
+    grid-area: E;
+  }
+  .cards div:nth-child(6){
+    grid-area: F;
+  }
+
+  .footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    line-height: 2.8rem;
+    margin-bottom: 5rem;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  .footer span a{
+    font-family: "Open Sans", sans-serif;
+    margin-left: 0.4rem;
+    font-weight: bold;
+    color:black;
+  }
+
+}
+
+  @media (min-width:1200px) {
+    .container{
+      min-width: 120rem;
+      display: flex;
+      height: 72rem;  
+    }
+
+    body::before{
+      content: "";
+      position: absolute;
+      background-color: var(--principal-color);
+      width: 37.7rem;
+      min-height: 72rem;
+      top:0;
+      left: 0;
+      z-index:-1;
+    }
+
+    .header{
+      width: 40.7rem;
+    }
+
+    .logo{
+      width: 50%;
+    }
+
+    .titleHeader{
+      text-align: center;
+      background-color: var(--highlighted-header-color);
+      width:37.7rem;
+      height: 7rem;
+      padding: 2rem 0;
+    }
+
+    main{
+      padding: 6.4rem 8.1rem 12.4rem 9.8rem;
+    }
+
+    .text{
+      padding: 3.2rem 4.8rem 12.5rem 5.4rem;
+    }
+
+    .text p{
+      width: 27.5rem;
+      color:white;
+      font-size: 2.4rem;
+      line-height: 2rem;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .cards{
+      display: grid;
+      gap:1rem;
+      grid-template-areas:  "A B C"
+      "D B F"
+      "D E F";
+    }
+
+    .cards div:nth-child(1){
+      grid-area: A;
+    }
+
+    .cards div:nth-child(2){
+      grid-area: B;
+    }
+  
+    .cards div:nth-child(3){
+      grid-area: C;
+    }
+  
+    .cards div:nth-child(4){
+      grid-area: D;
+    }
+
+    .cards div:nth-child(5){
+      grid-area: E;
+    }
+
+    .cards div:nth-child(6){
+      grid-area: F;
+    }
+
+    .cards{
+      gap:3rem;
+      margin: auto;
+    }
+
+    .footer{
+      position: relative;
+    }
+
+    .footer{
+    position: absolute;
+    width: 59rem;
+    left: 50rem;
+    top: 69rem;
+    }
+  }
+  @media (min-width:1400px){
+    .container{
+      max-width: 200rem;
+      height: 100rem;
+    }
+
+    body::before{
+      content: "";
+      position: absolute;
+      background-color: var(--principal-color);
+      width: 40.7rem;
+      min-height: 93rem;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    .titleHeader{
+      width: 40.7rem;
+    }
+
+    main{
+      padding: 1.4rem 8.1rem 12.4rem 4rem;
+    }
+
+    .text p{
+      width: 27.5rem;
+      color: white;
+      font-size: 2.4rem;
+      font-family: 'Roboto', sans-serif;
+      line-height: 3rem;
+    }
+
+    .footer{
+      position: absolute;
+      width: 59rem;
+      left: 66rem;
+      top: 89rem;
+    }
+  }
+
+ 
