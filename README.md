@@ -38,4 +38,7 @@ e depois avançamos na estrutura e estilização para a versão desktop.
 * HTML
 * CSS
 
+O projeto finalizado pode ser visto em: https://mayaradias.github.io/Space-Cream/
+
 O layout do projeto foi disponibilizado através do Figma.
+
