@@ -4,6 +4,7 @@
   box-sizing: border-box;
   font-family: 'Staatliches', cursive;
   text-decoration: none;
+
 }
 
 /*<------------ variables ------------------->*/
@@ -27,7 +28,7 @@ body{
   position: relative;
 }
 
-body::before{
+/* body::before{
   content: "";
   position: absolute;
   background-color: var(--principal-color);
@@ -36,7 +37,7 @@ body::before{
   top:0;
   left: 0;
   z-index:-1;
-}
+} */
 
 .container{
   max-width:50rem ;
@@ -55,6 +56,17 @@ body::before{
   flex-direction: column;
 }
 
+.header::before{
+  content: "";
+  position: absolute;
+  background-color: var(--principal-color);
+  width: 100%;
+  height: 27.9rem;
+  top:0;
+  left: 0;
+  z-index:-1;
+}
+
 .header h1{
   font-weight: 400;
   font-size: 4rem;
@@ -62,6 +74,7 @@ body::before{
   color:white;
   letter-spacing: 0.05em;
   font-family: "Staatliches", cursive;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
 }
 
 .titleHeader{
@@ -69,7 +82,11 @@ body::before{
   background-color: var(--highlighted-header-color);
   width: 100%;
   padding: 0.8rem 0;
+  margin-bottom: 3rem;
 }
+
+/*<---------------- container --------------->*/
+
 
 
 /*<---------------- main --------------->*/
@@ -84,11 +101,12 @@ main{
 .text p{
   font-family: "Palanquin", sans-serif;
   font-size: 2rem;
-  line-height: 2rem;
+  line-height: 2rem; 
   color: var(--text-color);
   text-align: center;
-  margin: 8rem auto 6rem;
-  width: 31rem;
+  margin: 1.4rem 4rem 6.3rem;
+  /* margin: 8rem auto 6rem; */
+ /*  width: 31rem; */
 }
 
 .card{
@@ -163,6 +181,17 @@ main{
     background-color: white;
   }
 
+.header::before{
+    content: "";
+    position: absolute;
+    background-color: var(--principal-color);
+    width: 100vw;
+    height: 30rem; /*aqui fui testando qual medida ficava boa */
+    top:0;
+    left: 0;
+    z-index:-1;
+  }
+
   .header{
     display: flex;
     flex-direction: column;
@@ -181,9 +210,10 @@ main{
   .text p{
     font-size: 2.5rem;
     line-height: 3rem;
-    width: 45rem;
-    margin: 8rem auto 2rem;
- }
+/*     width: 45rem;
+    margin: 8rem auto 2rem; */
+    padding: 1rem;
+  }
 
   .cards{
     display: grid;
@@ -234,104 +264,173 @@ main{
 
 }
 
-  @media (min-width:1200px) {
-    .container{
-      max-width: 120rem;
-      display: flex;
-      height: 72rem;  
-    }
+@media (min-width:1160px){
 
-    body::before{
-      content: "";
-      position: absolute;
-      background-color: var(--principal-color);
-      width: 37.7rem;
-      min-height: 72rem;
-      top:0;
-      left: 0;
-      z-index:-1;
-    }
+  body {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+}
 
-    .header{
-      width: 40.7rem;
-    }
+/*   .container{
+    min-width: 116rem;
+    height: 100rem;
+  } */
 
-    .logo{
-      width: 50%;
-    }
+.header::before{
+  display: none; /* aqui estou escondendo esse pseudo-elemento no modo desktop, pois o header vai receber o background */
 
-    .titleHeader{
-      text-align: center;
-      background-color: var(--highlighted-header-color);
-      width:37.7rem;
-      height: 7rem;
-      padding: 2rem 0;
-    }
+  }
 
-    main{
-      padding: 6.4rem 8.1rem 12.4rem 9.8rem;
-    }
+  .header{
+    display: flex;
+    flex-direction: column;
+    width: 38rem;
+    height: 100vh;
+    background-color: var(--principal-color);
 
-    .text{
-      padding: 3.2rem 4.8rem 12.5rem 5.4rem;
-    }
+  }
 
-    .text p{
-      width: 27.5rem;
-      color:white;
-      font-size: 2.4rem;
-      line-height: 2rem;
-      font-family: 'Roboto', sans-serif;
-    }
+  .header h1{
+    font-size: 4.8rem;
+    line-height: 3.4rem;
+  }
 
-    .cards{
-      display: grid;
-      gap:2rem;
-      grid-template-areas:  "A B C"
-      "D B F"
-      "D E F";
-    }
+/*   .titleHeader{
+    width: 40.7rem;
+  } */
 
-    .cards div:nth-child(1){
-      grid-area: A;
-    }
+  .logo {
+    width: 22rem;
+  }
 
-    .cards div:nth-child(2){
-      grid-area: B;
-    }
-  
-    .cards div:nth-child(3){
-      grid-area: C;
-    }
-  
-    .cards div:nth-child(4){
-      grid-area: D;
-    }
 
-    .cards div:nth-child(5){
-      grid-area: E;
-    }
 
-    .cards div:nth-child(6){
-      grid-area: F;
-    }
+  main{
+    padding: 1.4rem 8.1rem 12.4rem 4rem;
+  }
 
-    .cards{
-      gap:3rem;
-      margin: auto;
-    }
+  .text p{
+    width: 27.5rem;
+    color: white;
+    font-size: 2.4rem;
+    font-family: 'Roboto', sans-serif;
+    line-height: 3rem;
+  }
 
-    .footer{
-      position: relative;
-    }
-
-    .footer{
+  .footer{
     position: absolute;
     width: 59rem;
-    left: 50rem;
-    top: 69rem;
-    }
+    left: 66rem;
+    top: 89rem;
   }
+}
+
+
+
+
+/* 
+ 
+@media (min-width:701px) {
+  .container{
+    max-width: 120rem;
+    display: flex;
+    height: 72rem;  
+  }
+
+  body::before{
+    content: "";
+    position: absolute;
+    background-color: var(--principal-color);
+    width: 37.7rem;
+    min-height: 72rem;
+    top:0;
+    left: 0;
+    z-index:-1;
+  }
+
+  .header{
+    width: 40.7rem;
+  }
+
+  .logo{
+    width: 50%;
+  }
+
+  .titleHeader{
+    text-align: center;
+    background-color: var(--highlighted-header-color);
+    width:37.7rem;
+    height: 7rem;
+    padding: 2rem 0;
+  }
+
+  main{
+    padding: 6.4rem 8.1rem 12.4rem 9.8rem;
+  }
+
+  .text{
+    padding: 3.2rem 4.8rem 12.5rem 5.4rem;
+  }
+
+  .text p{
+    width: 27.5rem;
+    color:white;
+    font-size: 2.4rem;
+    line-height: 2rem;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .cards{
+    display: grid;
+    gap:2rem;
+    grid-template-areas:  "A B C"
+    "D B F"
+    "D E F";
+  }
+
+  .cards div:nth-child(1){
+    grid-area: A;
+  }
+
+  .cards div:nth-child(2){
+    grid-area: B;
+  }
+
+  .cards div:nth-child(3){
+    grid-area: C;
+  }
+
+  .cards div:nth-child(4){
+    grid-area: D;
+  }
+
+  .cards div:nth-child(5){
+    grid-area: E;
+  }
+
+  .cards div:nth-child(6){
+    grid-area: F;
+  }
+
+  .cards{
+    gap:3rem;
+    margin: auto;
+  }
+
+  .footer{
+    position: relative;
+  }
+
+  .footer{
+  position: absolute;
+  width: 59rem;
+  left: 50rem;
+  top: 69rem;
+  }
+}
+ */
+/*
   @media (min-width:1400px){
     .container{
       max-width: 160rem;
@@ -372,3 +471,4 @@ main{
       top: 89rem;
     }
   }
+ */
